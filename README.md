@@ -75,6 +75,8 @@ npm run dev
 
 Runs at http://localhost:5173
 
+---
+
 ## Limitations
 - Currently supports only PNG images for ice cream flavors.
 
@@ -83,6 +85,8 @@ Runs at http://localhost:5173
 - Theme switching is limited to predefined flavors/themes.
 
 - No backend or database integration yet — all flavor data is local.
+
+---
 
 ## Internal Documentation & Comments
 - ThemeContext.jsx: Handles all flavor theme management.
@@ -97,6 +101,8 @@ Runs at http://localhost:5173
 
 - Components are reusable and self-contained to allow easy future expansion.
 
+---
+
 ### Tip for Developers:
 - When adding new ice cream flavors:
 
@@ -105,6 +111,8 @@ Runs at http://localhost:5173
 - Update the themes object in ThemeContext.jsx.
 
 - The HeroSection will automatically render the new flavor.
+
+---
 
 ## License
 
