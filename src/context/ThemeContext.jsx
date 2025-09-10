@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const ThemeContext = createContext();
 
@@ -7,7 +7,7 @@ export const themes = {
     name: "strawberry",
     gradient: "from-[#BE128D] to-[#FF6CEE]",
     image: "/images/icecream-1.png",
-    accent: "#FF6CEE", 
+    accent: "#FF6CEE",
   },
   blueberry: {
     name: "blueberry",
@@ -31,6 +31,18 @@ export const themes = {
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(themes.strawberry);
+
+  useEffect(() => {
+    Object.values(themes).forEach((t) => {
+      const img = new Image();
+      img.src = t.image;
+    });
+
+    Object.keys(themes).forEach((_, index) => {
+      const img = new Image();
+      img.src = `/images/Component-${index + 1}.png`;
+    });
+  }, []);
 
   const changeTheme = (key) => {
     setTheme(themes[key]);
